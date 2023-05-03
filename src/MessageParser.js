@@ -1,24 +1,29 @@
-// MessageParser starter code in MessageParser.js
+// // MessageParser starter code in MessageParser.js
 
-class MessageParser {
-  constructor(actionProvider) {
-    this.actionProvider = actionProvider;
-  }
+import React from 'react';
 
-  parse(message) {
-    debugger;
-    const lowerCaseMessage = message.toLowerCase();
+function MessageParser({children, actions,...props}){
+    const parse = (message) => {
+        const lowerCaseMessage = message.toLowerCase();
 
-    if (lowerCaseMessage.includes("hello")) {
-      this.actionProvider.greet();
-    }
+        if (lowerCaseMessage.includes("حواله ملتی")) {
+            actions.greet();
+        }
 
-    if (lowerCaseMessage.includes("javascript")) {
-      this.actionProvider.handleJavascriptList();
-    }
-  }
-
-
-}
-
+        if (lowerCaseMessage.includes("javascript")) {
+            actions.confirmHandle();
+        }
+    };
+    return (
+        <div>
+            {React.Children.map(children, (child) => {
+                return React.cloneElement(child, {
+                    parse: parse,
+                    actions,
+                    props
+                });
+            })}
+        </div>
+    );
+};
 export default MessageParser;

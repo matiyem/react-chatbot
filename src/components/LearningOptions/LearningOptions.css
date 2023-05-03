@@ -1,7 +1,7 @@
 .learning-options-container {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  /*display: flex;*/
+  /*align-items: flex-start;*/
+  /*flex-wrap: wrap;*/
 }
 
 .learning-option-button {
@@ -10,4 +10,5 @@
   background: transparent;
   border: 1px solid green;
   margin: 3px;
+
 }

@@ -3,12 +3,13 @@ import { createChatBotMessage } from "react-chatbot-kit";
 
 import LearningOptions from "./components/LearningOptions/LearningOptions";
 import LinkList from "./components/LinkList/LinkList";
+import ConfirmList from "./components/ConfirmOption/ConfirmList";
 
 const config = {
   botName: "LearningBot",
   initialMessages: [
-    createChatBotMessage("Hi, I'm here to help. What do you want to learn?", {
-      widget: "learningOptions",
+    createChatBotMessage("موعد پرداخت قسط شما فرارسیده آیا مایل به پرداخت میباشد؟", {
+      widget: "pardakhtGhest",
     }),
   ],
   customStyles: {
@@ -21,33 +22,22 @@ const config = {
   },
   widgets: [
     {
-      widgetName: "learningOptions",
-      widgetFunc: (props) => <LearningOptions {...props} />,
+      widgetName: "pardakhtGhest",
+      widgetFunc: (props) => {
+        return <LearningOptions {...props} />
+      },
     },
     {
-      widgetName: "javascriptLinks",
-      widgetFunc: (props) => <LinkList {...props} />,
-      props: {
-        options: [
-          {
-            text: "Introduction to JS",
-            url:
-                "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/",
-            id: 1,
-          },
-          {
-            text: "Mozilla JS Guide",
-            url:
-                "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
-            id: 2,
-          },
-          {
-            text: "Frontend Masters",
-            url: "https://frontendmasters.com",
-            id: 3,
-          },
-        ],
+      widgetName: "chooseAccountNumber",
+      widgetFunc: (props) => {
+        return <LinkList {...props} />
       },
+
+    },
+    {
+      widgetName: "confirm",
+      widgetFunc: (props) => <ConfirmList {...props} />,
+
     },
   ],
 };
