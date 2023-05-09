@@ -1,29 +1,26 @@
-import React, {useEffect, useReducer} from 'react';
+import React, {useReducer} from 'react';
 import './App.css';
 import ActionProvider from "./ActionProvider";
 import MessageParser from "./MessageParser";
 import Chatbot from "react-chatbot-kit";
 import config from "./config";
-import {UserContext, action as userAction, reducer as userReducer} from "./components/context/UserContext";
+import {action as userAction, reducer as userReducer, UserContext} from "./components/context/UserContext";
 
 export default function App() {
-    const [state, dispatch] = useReducer(userReducer, {});
-    // useEffect(() => {
-    //     debugger;
-    //     // console.log('Component mounted');
-    //     // window.document.getElementsByClassName('react-chatbot-kit-chat-input')[0].disabled = true
-    // }, []);
+    console.debug('app.render2');
+
+    const [state, dispatch] = useReducer(userReducer, {flag:false});
 
     return (
         <div className="App">
-            <UserContext.Provider value={userAction(state, dispatch)}>
+            <UserContext.Provider value={userAction(state, dispatch) }>
                 <header className="App-header">
                     <Chatbot className="chat-bot"
                              config={config}
                              messageParser={MessageParser}
                              actionProvider={ActionProvider}
-                             custo
                              placeholderText='Input placeholder'
+
                     />
                 </header>
             </UserContext.Provider>

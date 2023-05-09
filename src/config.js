@@ -1,16 +1,21 @@
 import React from "react";
-import { createChatBotMessage } from "react-chatbot-kit";
 
-import LearningOptions from "./components/LearningOptions/LearningOptions";
-import LinkList from "./components/LinkList/LinkList";
-import ConfirmList from "./components/ConfirmOption/ConfirmList";
+import LearningOptions from "./components/CartToCart/LearningOptions/LearningOptions";
+import LinkList from "./components/CartToCart/LinkList/LinkList";
+import ConfirmList from "./components/CartToCart/ConfirmOption/ConfirmList";
+import DestinationAccountNumber from "./components/HavaleMelati/DestinationAccountNumber";
+import ChooseAccountHavaleMellati from "./components/HavaleMelati/ChooseAccountHavaleMellati";
+import ConfirmHavaleMellati from "./components/HavaleMelati/ConfirmHavaleMellati";
+import AmountHavale from "./components/HavaleMelati/AmountHavale";
+import {createChatBotMessage} from "react-chatbot-kit";
+
 
 const config = {
   botName: "LearningBot",
   initialMessages: [
-    createChatBotMessage("موعد پرداخت قسط شما فرارسیده آیا مایل به پرداخت میباشد؟", {
-      widget: "pardakhtGhest",
-    }),
+    // createChatBotMessage(null,{
+    //   widget: "pardakhtGhest",
+    // }),
   ],
   customStyles: {
     botMessageBox: {
@@ -39,7 +44,30 @@ const config = {
       widgetFunc: (props) => <ConfirmList {...props} />,
 
     },
+    {
+      widgetName: "ChooseAccountHavaleMellati",
+      widgetFunc: (props) => <ChooseAccountHavaleMellati {...props} />,
+
+    },
+    {
+      widgetName: "getAccountNumberHavaleMellati",
+      widgetFunc: (props) => <DestinationAccountNumber {...props} />,
+
+    },
+    {
+      widgetName: "amountHavaleMellati",
+      widgetFunc: (props) => <AmountHavale {...props} />,
+
+    },
+    {
+      widgetName: "confirmHavaleMellati",
+      widgetFunc: (props) => <ConfirmHavaleMellati {...props} />,
+
+    },
   ],
 };
+function f() {
+  
+}
 
 export default config;

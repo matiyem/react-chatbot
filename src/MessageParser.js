@@ -7,12 +7,15 @@ function MessageParser({children, actions,...props}){
         const lowerCaseMessage = message.toLowerCase();
 
         if (lowerCaseMessage.includes("حواله ملتی")) {
-            actions.greet();
+            debugger;
+            actions.startHavaleMellati(actions);
         }
 
         if (lowerCaseMessage.includes("javascript")) {
             actions.confirmHandle();
         }
+
+        // props.set
     };
     return (
         <div>
