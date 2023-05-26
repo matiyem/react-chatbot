@@ -1,13 +1,14 @@
 import React from "react";
 
-import LearningOptions from "./components/CartToCart/LearningOptions/LearningOptions";
-import LinkList from "./components/CartToCart/LinkList/LinkList";
-import ConfirmList from "./components/CartToCart/ConfirmOption/ConfirmList";
+import LearningOptions from "./components/PardakhtGhest/LearningOptions/LearningOptions";
+import LinkList from "./components/PardakhtGhest/LinkList/LinkList";
+import ConfirmList from "./components/PardakhtGhest/ConfirmOption/ConfirmList";
 import DestinationAccountNumber from "./components/HavaleMelati/DestinationAccountNumber";
 import ChooseAccountHavaleMellati from "./components/HavaleMelati/ChooseAccountHavaleMellati";
 import ConfirmHavaleMellati from "./components/HavaleMelati/ConfirmHavaleMellati";
 import AmountHavale from "./components/HavaleMelati/AmountHavale";
-import {createChatBotMessage} from "react-chatbot-kit";
+import AllOperation from "./components/AllOperation/AllOperation";
+import Receipt from "./components/HavaleMelati/Receipt";
 
 
 const config = {
@@ -64,10 +65,18 @@ const config = {
       widgetFunc: (props) => <ConfirmHavaleMellati {...props} />,
 
     },
+    {
+      widgetName: "allOperation",
+      widgetFunc: (props) => <AllOperation {...props} />,
+
+    },
+    {
+      widgetName: "receipt",
+      widgetFunc: (props) => <Receipt {...props} />,
+
+    },
   ],
 };
-function f() {
-  
-}
+
 
 export default config;

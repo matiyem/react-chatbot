@@ -1,11 +1,10 @@
 import React from "react";
 
-import "../CartToCart/ConfirmOption/ConfirmList.css";
+import "../PardakhtGhest/ConfirmOption/ConfirmList.css";
 import "./HavaleMelati.css";
 
 
 const AmountHavale = (props) => {
-    debugger;
     const options = [
         {
             text: "تایید",

@@ -51,10 +51,18 @@ export function confirmHavaleMelati(method) {
 
 export function submitHavaleMelati(method) {
     debugger;
-    const text=method.actions.getValueFromContext("destinationAccountNumberData")
+    const destinationAccountNumber=method.actions.getValueFromContext("destinationAccountNumberData")
+    const data={
+        amount:110000,
+        destinationAccount:method.actions.getValueFromContext("destinationAccountNumberData"),
+
+    }
+    method.actions.setValueIntoContext("information",data);
+
     // accountNumber({account: e.target.textContent});
     // const { amountHavaleMellatiData } = useContext(UserContext);
-    const message = method.actions.createMessage("حواله شما با موفقيت انجام شد.", "");
+    const message = method.actions.createMessage("حواله شما با مشخصات زیر با موفقيت انجام شد.", "receipt");
+
     method.actions.updateChatbotState(message);
 }
 

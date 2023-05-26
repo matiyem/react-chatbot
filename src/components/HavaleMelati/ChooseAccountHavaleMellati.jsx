@@ -1,10 +1,8 @@
 import React from "react";
 
 import "./HavaleMelati.css";
-import {chooseAccountHavaleMellati} from "./HavaleMellati.service";
 
 const ChooseAccountHavaleMellati = (props) => {
-    debugger;
     const options = [
         {
             text: "123456",
@@ -13,7 +11,7 @@ const ChooseAccountHavaleMellati = (props) => {
         },
         {
             text: "789654",
-            handler: (event,obj) => props.actions.chooseAccountHavaleMellati(event,obj),
+            handler: (event) => props.actions.chooseAccountHavaleMellati(event,props),
             id: 2
         },
     ];

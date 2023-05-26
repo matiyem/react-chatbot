@@ -1,7 +1,7 @@
 import React, {useContext, useEffect} from 'react';
-import {chooseAccount} from "./components/CartToCart/LinkList/LinkList.service";
-import {cancelHandle, confirmHandle} from "./components/CartToCart/LearningOptions/LearningOptions.service";
-import {submitConfirmOption} from "./components/CartToCart/ConfirmOption/ConfirmList.service";
+import {chooseAccount} from "./components/PardakhtGhest/LinkList/LinkList.service";
+import {cancelHandle, confirmHandle} from "./components/PardakhtGhest/LearningOptions/LearningOptions.service";
+import {submitConfirmOption} from "./components/PardakhtGhest/ConfirmOption/ConfirmList.service";
 import {
     amountHavaleMelati,
     chooseAccountHavaleMellati,
@@ -14,11 +14,11 @@ import {
 } from "./components/HavaleMelati/HavaleMellati.service"
 import {UserContext} from "./components/context/UserContext";
 import {testMethod} from "./components/CommomMethod"
-
+import {AllOperationHavaleMellati} from "./components/AllOperation/AllOperation.service"
 
 function ActionProvider({createChatBotMessage, setState, children, ...props}) {
-    const {accountNumber, amountHavaleMellati, destinationAccountNumber, flag} = useContext(UserContext);
-    const {accountData, destinationAccountNumberData, amountHavaleMellatiData, flagData} = useContext(UserContext);
+    const {accountNumber, amountHavaleMellati, destinationAccountNumber, flag,information} = useContext(UserContext);
+    const {accountData, destinationAccountNumberData, amountHavaleMellatiData, flagData,informationData} = useContext(UserContext);
 
     useEffect(() => {
         debugger;
@@ -41,11 +41,15 @@ function ActionProvider({createChatBotMessage, setState, children, ...props}) {
             case "flag": {
                 flag({flag: value});
             }
+            case "information": {
+                information({information: value});
+            }
             default:
                 return "";
         }
     }
     const getValueFromContext = (text) => {
+        debugger;
         switch (text) {
             case "accountData": {
                 return accountData
@@ -58,6 +62,9 @@ function ActionProvider({createChatBotMessage, setState, children, ...props}) {
             }
             case "flagData": {
                 return flagData;
+            }
+            case "information": {
+                return informationData;
             }
             default:
                 return "";
@@ -89,6 +96,7 @@ function ActionProvider({createChatBotMessage, setState, children, ...props}) {
         }));
     }
     const removeAllMessageFromChatBot = () => {
+        debugger;
         setState(() => ({
             messages: [""],
         }));
@@ -121,6 +129,7 @@ function ActionProvider({createChatBotMessage, setState, children, ...props}) {
                         submitHavaleMelati: (method) => submitHavaleMelati(method),
                         getValueFromContext: (txt) => getValueFromContext(txt),
                         test: (create, update) => test(create, update),
+                        AllOperationHavaleMellati: (method) => AllOperationHavaleMellati(method)
 
 
                     },

@@ -16,6 +16,9 @@ function reducer(state, action) {
         case "amountHavaleMellati": {
             return {amountHavaleMellati: action.amountHavaleMellati};
         }
+        case "information": {
+            return {information: action.information};
+        }
 
         default:
             return state;
@@ -32,6 +35,8 @@ function action(state, dispatch) {
         destinationAccountNumberData: state,
         amountHavaleMellati: (data) => dispatch({type: "amountHavaleMellati", ...data}),
         amountHavaleMellatiData: state,
+        information: (data) => dispatch({type: "information", ...data}),
+        informationData: state,
 
     };
 }

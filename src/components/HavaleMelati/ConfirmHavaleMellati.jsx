@@ -4,7 +4,6 @@ import "./HavaleMelati.css";
 import {submitHavaleMelati} from "./HavaleMellati.service";
 
 const ConfirmHavaleMellati = (props) => {
-    // debugger;
     const options = [
         {
             text: "بله",
