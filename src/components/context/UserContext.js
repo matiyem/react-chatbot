@@ -6,6 +6,7 @@ function reducer(state, action) {
     switch (action.type) {
         case "flag": {
             return {flag: action.flag};
+            break;
         }
         case "account": {
             return {account: action.account};
@@ -19,6 +20,9 @@ function reducer(state, action) {
         case "information": {
             return {information: action.information};
         }
+        case "step": {
+            return {step: action.step};
+        }
 
         default:
             return state;
@@ -26,9 +30,10 @@ function reducer(state, action) {
 }
 
 function action(state, dispatch) {
+    debugger;
     return {
         flagData: state,
-        flag: (data) => dispatch({type: "flag",...data}),
+        flag: (data) => dispatch({type: "flag", ...data}),
         accountData: state,
         accountNumber: (data) => dispatch({type: "account", ...data}),
         destinationAccountNumber: (data) => dispatch({type: "destinationAccountNumber", ...data}),
@@ -37,6 +42,8 @@ function action(state, dispatch) {
         amountHavaleMellatiData: state,
         information: (data) => dispatch({type: "information", ...data}),
         informationData: state,
+        step: (data) => dispatch({type: "step", ...data}),
+        stepData: state,
 
     };
 }

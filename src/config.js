@@ -26,6 +26,7 @@ const config = {
       backgroundColor: "#376B7E",
     },
   },
+
   widgets: [
     {
       widgetName: "pardakhtGhest",

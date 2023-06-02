@@ -9,12 +9,12 @@ import {action as userAction, reducer as userReducer, UserContext} from "./compo
 export default function App() {
     console.debug('app.render2');
 
-    const [state, dispatch] = useReducer(userReducer, {flag:false});
+    const [state, dispatch] = useReducer(userReducer, {});
 
     return (
         <div className="App">
-            <UserContext.Provider value={userAction(state, dispatch) }>
-                <header className="App-header">
+            <header className="App-header">
+                <UserContext.Provider value={userAction(state, dispatch)}>
                     <Chatbot className="chat-bot"
                              config={config}
                              messageParser={MessageParser}
@@ -22,8 +22,8 @@ export default function App() {
                              placeholderText='Input placeholder'
 
                     />
-                </header>
-            </UserContext.Provider>
+                </UserContext.Provider>
+            </header>
         </div>
 
     );

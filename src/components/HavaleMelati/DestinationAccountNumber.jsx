@@ -16,7 +16,8 @@ const DestinationAccountNumber = (props) => {
         <div>
             <input
                 className="learning-option-button"
-                onChange={(event) => props.actions.useValueTextBox(event, props)}
+                id="destinationAccountNumberId"
+                // onChange={(event) => props.actions.useValueTextBox(event, props)}
             >
             </input>
             <button className="learning-option-button"

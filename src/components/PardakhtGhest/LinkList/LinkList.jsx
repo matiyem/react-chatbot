@@ -12,7 +12,7 @@ const LinkList = (props) => {
         },
         {
             text: "789654",
-            handler: (event,obj) => props.actions.chooseAccount(event,obj),
+            handler: (event) => props.actions.chooseAccount(event,props),
             id: 2
         },
     ];

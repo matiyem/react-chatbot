@@ -17,7 +17,8 @@ const AmountHavale = (props) => {
         <div>
             <input
                 className="learning-option-button"
-                onChange={(event) => props.actions.useValueTextBoxAmountHavale(event,props)}
+                id="amountHavaleId"
+                // onChange={(event) => props.actions.useValueTextBoxAmountHavale(event,props)}
             >
             </input>
             <button className="learning-option-button"
